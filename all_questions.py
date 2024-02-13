@@ -130,7 +130,6 @@ def question3():
 def question4():
     answer = {}
 
-    # Each string is one of ['binary', 'discrete', 'continuous', 'qualitative', 'nominal', 'ordinal', 'quantitative', 'interval', 'ratio']
     answer["a"] = ["binary", "qualitative", "nominal"]
     answer["a: explain"] = "AM or PM offers only two options without a quantitative value, representing nominal data."
 
