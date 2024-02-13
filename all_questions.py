@@ -130,53 +130,48 @@ def question3():
 def question4():
     answer = {}
 
-    # [string, string, string]
-    # Each string is one of ['binary', 'discrete', 'continuous', 'qualitative', 'nominal', 'ordinal',
-    #  'quantitative', 'interval', 'ratio'
-    # If you have a choice between 'binary' and 'discrete', choose 'binary'
+    # Each string is one of ['binary', 'discrete', 'continuous', 'qualitative', 'nominal', 'ordinal', 'quantitative', 'interval', 'ratio']
+    answer["a"] = ["binary", "qualitative", "nominal"]
+    answer["a: explain"] = "AM or PM offers only two options without a quantitative value, representing nominal data."
 
-    answer["a"] = []
+    answer["b"] = ["continuous", "quantitative", "ratio"]
+    answer["b: explain"] = "Brightness can vary continuously and has a true zero (complete darkness), making it ratio."
 
-    # Explain if there is more than one interpretation. Repeat for the other questions. At least five words that form a sentence.
-    answer["a: explain"] = ""
+    answer["c"] = ["discrete", "qualitative", "ordinal"]
+    answer["c: explain"] = "People's judgments categorize brightness into ordered groups without precise numerical values."
 
-    answer["b"] = []
-    answer["b: explain"] = ""
+    answer["d"] = ["continuous", "quantitative", "interval"]
+    answer["d: explain"] = "Angles can vary continuously and have meaningful intervals, but 0 degrees is arbitrary, not an absence of angle."
 
-    answer["c"] = []
-    answer["c: explain"] = ""
+    answer["e"] = ["discrete", "qualitative", "ordinal"]
+    answer["e: explain"] = "Medals represent ordered categories without quantitative measurement."
 
-    answer["d"] = []
-    answer["d: explain"] = ""
+    answer["f"] = ["continuous", "quantitative", "ratio"]
+    answer["f: explain"] = "Height can vary continuously with a true zero point, representing ratio data."
 
-    answer["e"] = []
-    answer["e: explain"] = ""
+    answer["g"] = ["discrete", "quantitative", "ratio"]
+    answer["g: explain"] = "The number of patients is countable with a true zero, making it ratio data."
 
-    answer["f"] = []
-    answer["f: explain"] = ""
+    answer["h"] = ["discrete", "qualitative", "nominal"]
+    answer["h: explain"] = "ISBN numbers are unique identifiers without a quantitative relationship, representing nominal data."
 
-    answer["g"] = []
-    answer["g: explain"] = ""
+    answer["i"] = ["discrete", "qualitative", "ordinal"]
+    answer["i: explain"] = "These categories have a natural order based on the ability to pass light, but are not quantitative."
 
-    answer["h"] = []
-    answer["h: explain"] = ""
+    answer["j"] = ["discrete", "qualitative", "ordinal"]
+    answer["j: explain"] = "Military ranks are ordered categorically without quantitative measurement."
 
-    answer["i"] = []
-    answer["i: explain"] = ""
+    answer["k"] = ["continuous", "quantitative", "ratio"]
+    answer["k: explain"] = "Distance can be measured continuously with a true zero, qualifying as ratio data."
 
-    answer["j"] = []
-    answer["j: explain"] = ""
+    answer["l"] = ["continuous", "quantitative", "ratio"]
+    answer["l: explain"] = "Density varies continuously, has a true zero, and measurements are directly comparable, making it ratio."
 
-    answer["k"] = []
-    answer["k: explain"] = ""
-
-    answer["l"] = []
-    answer["l: explain"] = ""
-
-    answer["m"] = []
-    answer["m: explain"] = ""
+    answer["m"] = ["discrete", "qualitative", "nominal"]
+    answer["m: explain"] = "Coat check numbers are unique identifiers without quantitative value or order, representing nominal data."
 
     return answer
+
 
 
 # ----------------------------------------------------------------------
