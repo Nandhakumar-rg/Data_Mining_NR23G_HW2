@@ -103,18 +103,18 @@ def question3():
     answer = {}
 
     # float
-    answer["(a) Gini, overall"] = 0.
+    answer["(a) Gini, overall"] = 0.4444
 
     # float
     answer["(b) Gini, ID"] = 0.0
-    answer["(c) Gini, Gender"] = 0.
-    answer["(d) Gini, Car type"] = 0.
-    answer["(e) Gini, Shirt type"] = 0.
+    answer["(c) Gini, Gender"] = 0.0
+    answer["(d) Gini, Car type"] = 0.0
+    answer["(e) Gini, Shirt type"] = 0.0
 
-    answer["(f) attr for splitting"] = ""
+    answer["(f) attr for splitting"] = "Car type"
 
     # Explanatory text string
-    answer["(f) explain choice"] = ""
+    answer["(f) explain choice"] = "Car Type is chosen for splitting at the root node due to its expected higher potential to differentiate between classes based on the problem context, as different car types might correlate more strongly with the target classes compared to other attributes."
 
     return answer
 
