@@ -103,13 +103,13 @@ def question3():
     answer = {}
 
     # float
-    answer["(a) Gini, overall"] = 0.4444
+    answer["(a) Gini, overall"] = 0.5
 
     # float
     answer["(b) Gini, ID"] = 0.0
-    answer["(c) Gini, Gender"] = 0.0
-    answer["(d) Gini, Car type"] = 0.0
-    answer["(e) Gini, Shirt type"] = 0.0
+    answer["(c) Gini, Gender"] = 0.48
+    answer["(d) Gini, Car type"] = 0.1625
+    answer["(e) Gini, Shirt type"] = 0.495
 
     answer["(f) attr for splitting"] = "Car type"
 
