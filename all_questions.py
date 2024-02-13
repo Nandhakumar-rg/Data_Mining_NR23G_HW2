@@ -180,23 +180,20 @@ def question4():
 def question5():
     explain = {}
 
-    # Read appropriate section of book chapter 3
+    explain["a"] = "Model 2"
+    explain["a explain"] = "Model 2 is expected to perform better on unseen instances because it shows higher accuracy on the testing set, indicating better generalization compared to Model 1, which appears to overfit the training data."
 
-    # string: one of 'Model 1' or 'Model 2'
-    explain["a"] = ""
-    explain["a explain"] = ""
+    explain["b"] = "Model 2"
+    explain["b explain"] = "Despite Model 1 having a slightly higher overall accuracy, Model 2's consistent performance and better generalization to unseen data make it a preferable choice for future unseen instances."
 
-    # string: one of 'Model 1' or 'Model 2'
-    explain["b"] = ""
-    explain["b explain"] = ""
+    explain["c similarity"] = "Both techniques aim to prevent overfitting by considering model complexity."
+    explain["c similarity explain"] = "MDL and the pessimistic error estimate both seek to balance fitting the training data well while keeping the model simple to generalize well to new data."
 
-    explain["c similarity"] = ""
-    explain["c similarity explain"] = ""
-
-    explain["c difference"] = ""
-    explain["c difference explain"] = ""
+    explain["c difference"] = "Approach to incorporating model complexity."
+    explain["c difference explain"] = "MDL uses a formalism based on data compression, while the pessimistic error estimate adjusts the error rate based on the tree size and the number of correctly classified instances."
 
     return explain
+
 
 
 # ----------------------------------------------------------------------
