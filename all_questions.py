@@ -79,14 +79,14 @@ def question2():
     answer = {}
 
     # Answers are floats
-    answer["(a) entropy_entire_data"] = 0.
+    answer["(a) entropy_entire_data"] = 0.991
     # Infogain
-    answer["(b) x <= 0.2"] = 0.
-    answer["(b) x <= 0.7"] = 0.
-    answer["(b) y <= 0.6"] = 0.
+    answer["(b) x <= 0.2"] = 0.918
+    answer["(b) x <= 0.7"] = 0.971
+    answer["(b) y <= 0.6"] = 0.918
 
     # choose one of 'x=0.2', 'x=0.7', or 'x=0.6'
-    answer["(c) attribute"] = ""  
+    answer["(c) attribute"] = "x=0.2"  
 
     # Use the Binary Tree structure to construct the tree
     # Answer is an instance of BinaryTree
@@ -201,7 +201,7 @@ def question6():
     # x <= ? is the left branch
     # y <= ? is the left branch
 
-    # value of the form "z <= float" where "z" is "x" or "y"
+    # value of the form "z < float" where "z" is "x" or "y"
     #  and "float" is a floating point number (notice: <=)
     # The value could also be "A" or "B" if it is a leaf
     answer["a, level 1"] = ""
