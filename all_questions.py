@@ -23,50 +23,60 @@ def question1():
     level2_left = {}
     level2_right = {}
 
-    level1["smoking"] = 1.
-    level1["smoking_info_gain"] = 0.278
+    level1["smoking"] = 1.0
+    level1["smoking_info_gain"] = 0.2780719051126377
 
-    level1["cough"] = -1.
-    level1["cough_info_gain"] = -1.
+    level1["cough"] = -1
+    level1["cough_info_gain"] = 0.034851554559677034
 
-    level1["radon"] = -1.
-    level1["radon_info_gain"] = -1.
+    level1["radon"] = -1
+    level1["radon_info_gain"] = 0.2364527976600279
 
-    level1["weight_loss"] = -1.
-    level1["weight_loss_info_gain"] = -1.
+    level1["weight_loss"] = -1
+    level1["weight_loss_info_gain"] = 0.02904940554533142
 
-    level2_left["smoking"] = -1.
-    level2_left["smoking_info_gain"] = -1.
-    level2_right["smoking"] = -1.
-    level2_right["smoking_info_gain"] = -1.
+    level2_left["smoking"] = -1
+    level2_left["smoking_info_gain"] = -1
 
-    level2_left["radon"] = -1.
-    level2_left["radon_info_gain"] = -1.
+    level2_right["smoking"] = -1
+    level2_right["smoking_info_gain"] = -1
 
-    level2_left["cough"] = 1.
-    level2_left["cough_info_gain"] = 0.722
+    level2_left["radon"] = 1
+    level2_left["radon_info_gain"] =-1
 
-    level2_left["weight_loss"] = -1.
-    level2_left["weight_loss_info_gain"] = -1.
+    level2_left["cough"] = -1
+    level2_left["cough_info_gain"] = 0.7219280948873623
 
-    level2_right["radon"] = 1.
-    level2_right["radon_info_gain"] = 0.722
+    level2_left["weight_loss"] = -1
+    level2_left["weight_loss_info_gain"] = -1
 
-    level2_right["cough"] = -1.
-    level2_right["cough_info_gain"] = -1.
+    level2_right["radon"] = 1.0
+    level2_right["radon_info_gain"] = 0.7219280948873623
 
-    level2_right["weight_loss"] = -1.
-    level2_right["weight_loss_info_gain"] = -1.
+    level2_right["cough"] = -1
+    level2_right["cough_info_gain"] = -1
+
+    level2_right["weight_loss"] = -1
+    level2_right["weight_loss_info_gain"] = -1
 
     answer["level1"] = level1
     answer["level2_left"] = level2_left
     answer["level2_right"] = level2_right
 
     # Fill up `construct_tree``
-    # tree, training_error = construct_tree()
-    tree = u.BinaryTree("root")  # MUST STILL CREATE THE TREE *****
-    answer["tree"] = tree  # use the Tree structure
-    # answer["training_error"] = training_error
+    # tree, training_error = construct_tree() 
+        
+    tree = u.BinaryTree('Smoking Tobacco')
+
+    cough = tree.insert_left('Chronic Cough')
+    radon = tree.insert_left('Radon Exposure')
+
+    cough.insert_right(1)
+    cough.insert_left(4)
+
+    radon.insert_left(1)
+    radon.insert_right(4)
+    answer["tree"] = tree  
     answer["training_error"] = 0.0  
 
     return answer
@@ -79,18 +89,31 @@ def question2():
     answer = {}
 
     # Answers are floats
-    answer["(a) entropy_entire_data"] = 0.991
+    answer["(a) entropy_entire_data"] = 1.4253642047367425
     # Infogain
-    answer["(b) x <= 0.2"] = 0.918
-    answer["(b) x <= 0.7"] = 0.971
-    answer["(b) y <= 0.6"] = 0.918
+    answer["(b) x <= 0.2"] = 0.17739286055515824
+    answer["(b) x <= 0.7"] = 0.3557029418697566
+    answer["(b) y <= 0.6"] = 0.34781842724338197
 
     # choose one of 'x=0.2', 'x=0.7', or 'x=0.6'
-    answer["(c) attribute"] = "x=0.2"  
+    answer["(c) attribute"] = "y=0.6"  
 
     # Use the Binary Tree structure to construct the tree
     # Answer is an instance of BinaryTree
-    tree = u.BinaryTree("Root")
+    tree = u.BinaryTree("y <= 0.6")
+    left = tree.insert_left("x <= 0.7")
+    right = tree.insert_right("x <= 0.2")
+
+    left.insert_left("B")
+    
+    y_03 = left.insert_right("y <= 0.3")
+    y_03.insert_left("A")
+    y_03.insert_right("C")
+
+    right.insert_right("A")
+    y_08 = right.insert_left("y <= 0.8")
+    y_08.insert_right("B")
+    y_08.insert_left("C")
     answer["(d) full decision tree"] = tree
 
     return answer
@@ -109,7 +132,7 @@ def question3():
     answer["(b) Gini, ID"] = 0.0
     answer["(c) Gini, Gender"] = 0.48
     answer["(d) Gini, Car type"] = 0.1625
-    answer["(e) Gini, Shirt type"] = 0.495
+    answer["(e) Gini, Shirt type"] = 0.4914405
 
     answer["(f) attr for splitting"] = "Car type"
 
@@ -130,46 +153,60 @@ def question3():
 def question4():
     answer = {}
 
-    answer["a"] = ["binary", "qualitative", "nominal"]
-    answer["a: explain"] = "AM or PM offers only two options without a quantitative value, representing nominal data."
+    
+    answer["a"] = ['Continuous', 'Quantitative', 'Ratio']
+    answer["a: explain"] = "Continuous because each measure can be subdivided into smaller measures without end. Quantitative due to its numerical value significance. Ratio because there's a true zero; at midnight, marking a new day, establishing a unique reference point."
 
-    answer["b"] = ["continuous", "quantitative", "ratio"]
-    answer["b: explain"] = "Brightness can vary continuously and has a true zero (complete darkness), making it ratio."
+    
+    answer["b"] = ['Discrete', 'Quantitative', 'Ratio']
+    answer["b: explain"] = "Discrete since even the smallest measurement units are distinct. Quantitative for its numerical value. Ratio because of the true zero; absolute darkness signifies no return to light."
 
-    answer["c"] = ["discrete", "qualitative", "ordinal"]
-    answer["c: explain"] = "People's judgments categorize brightness into ordered groups without precise numerical values."
+    
+    answer["c"] = ['Discrete', 'Qualitative', 'Ordinal']
+    answer["c: explain"] = "Discrete with limited descriptors for light levels. Qualitative as assessment is based on judgment. Ordinal as descriptions imply a sequence like 'Dim', 'Bright', to 'Very Bright'."
 
-    answer["d"] = ["continuous", "quantitative", "interval"]
-    answer["d: explain"] = "Angles can vary continuously and have meaningful intervals, but 0 degrees is arbitrary, not an absence of angle."
+    
+    answer["d"] = ['Continuous', 'Quantitative', 'Ratio']
+    answer["d: explain"] = "Continuous as measurements can be infinitely fine (e.g., 0.00000000000023°). Quantitative for its numerical nature. Ratio because of the non-negativity; angles can't be negative."
 
-    answer["e"] = ["discrete", "qualitative", "ordinal"]
-    answer["e: explain"] = "Medals represent ordered categories without quantitative measurement."
+    
+    answer["e"] = ['Discrete', 'Qualitative', 'Ordinal']
+    answer["e: explain"] = "Discrete due to the three distinct levels. Qualitative as it's categorized by titles rather than numbers. Ordinal for denoting performance order."
 
-    answer["f"] = ["continuous", "quantitative", "ratio"]
-    answer["f: explain"] = "Height can vary continuously with a true zero point, representing ratio data."
+    
+    answer["f"] = ['Continuous', 'Quantitative', 'Interval']
+    answer["f: explain"] = "Continuous as measures can be infinitely subdivided. Quantitative for its reliance on numerical value. Interval due to the absence of a true zero; analogous to temperature scales."
 
-    answer["g"] = ["discrete", "quantitative", "ratio"]
-    answer["g: explain"] = "The number of patients is countable with a true zero, making it ratio data."
+   
+    answer["g"] = ['Discrete', 'Quantitative', 'Ratio']
+    answer["g: explain"] = "Discrete as it counts in natural numbers. Quantitative due to numerical significance. Ratio because of the true zero; negative patients are impossible."
 
-    answer["h"] = ["discrete", "qualitative", "nominal"]
-    answer["h: explain"] = "ISBN numbers are unique identifiers without a quantitative relationship, representing nominal data."
+    
+    answer["h"] = ['Discrete', 'Qualitative', 'Nominal']
+    answer["h: explain"] = "Discrete since fractions of an ISBN don't exist. Qualitative as it serves as an identifier. Nominal for its exclusive use for identification without hierarchy."
 
-    answer["i"] = ["discrete", "qualitative", "ordinal"]
-    answer["i: explain"] = "These categories have a natural order based on the ability to pass light, but are not quantitative."
+    
+    answer["i"] = ['Discrete', 'Qualitative', 'Ordinal']
+    answer["i: explain"] = "Discrete with only three levels. Qualitative as it's based on judgment. Ordinal for ranking opacity to translucency."
 
-    answer["j"] = ["discrete", "qualitative", "ordinal"]
-    answer["j: explain"] = "Military ranks are ordered categorically without quantitative measurement."
+    
+    answer["j"] = ['Discrete', 'Qualitative', 'Ordinal']
+    answer["j: explain"] = "Discrete with a fixed count of military ranks. Qualitative as it's based on rank, not number. Ordinal for the hierarchy it represents."
 
-    answer["k"] = ["continuous", "quantitative", "ratio"]
-    answer["k: explain"] = "Distance can be measured continuously with a true zero, qualifying as ratio data."
+    
+    answer["k"] = ['Continuous', 'Quantitative', 'Ratio']
+    answer["k: explain"] = "Continuous with infinitely divisible measures. Quantitative for numerical importance. Ratio due to the true zero; being at the center defines a unique starting point."
 
-    answer["l"] = ["continuous", "quantitative", "ratio"]
-    answer["l: explain"] = "Density varies continuously, has a true zero, and measurements are directly comparable, making it ratio."
+    
+    answer["l"] = ['Continuous', 'Quantitative', 'Ratio']
+    answer["l: explain"] = "Continuous as density can vary infinitely. Quantitative for its numerical base. Ratio because zero density, though theoretical, establishes a baseline."
 
-    answer["m"] = ["discrete", "qualitative", "nominal"]
-    answer["m: explain"] = "Coat check numbers are unique identifiers without quantitative value or order, representing nominal data."
+    
+    answer["m"] = ['Discrete', 'Qualitative', 'Nominal']
+    answer["m: explain"] = "Discrete as coat check numbers are indivisible. Qualitative for being identifiers. Nominal as they're used solely for identification, without implying order or quantity."
 
     return answer
+
 
 
 
@@ -201,26 +238,29 @@ def question6():
     # x <= ? is the left branch
     # y <= ? is the left branch
 
-    # value of the form "z < float" where "z" is "x" or "y"
+    # value of the form "z <= float" where "z" is "x" or "y"
     #  and "float" is a floating point number (notice: <=)
     # The value could also be "A" or "B" if it is a leaf
-    answer["a, level 1"] = ""
-    answer["a, level 2, right"] =""
-    answer["a, level 2, left"] = ""
-    answer["a, level 3, left"] = ""
-    answer["a, level 3, right"] = ""
+    answer["a, level 1"] = "x <= 0.5"
+    answer["a, level 2, right"] ="A"
+    answer["a, level 2, left"] = "y <= 0.4"
+    answer["a, level 3, left"] = "A"
+    answer["a, level 3, right"] = "x <= 0.2"
 
     # run each datum through the tree. Count the number of errors and divide by number of samples. .
     # Since we have areas: calculate the area that is misclassified (total area is unity)
     # float between 0 and 1
-    answer["b, expected error"] = 0.
+    answer["b, expected error"] = 0.58
 
     # Use u.BinaryTree to define the tree. Create your tree.
     # Replace "root node" by the proper node of the form "z <= float"
-    tree = u.BinaryTree("root note")
+    tree = u.BinaryTree("x <= 0.5")
 
+    A = tree.insert_right("A")
+    B = tree.insert_left("y <= 0.4")
+    B.insert_left("A")
+    B.insert_right("x <= 0.2")
     answer["c, tree"] = tree
-
     return answer
 
 
@@ -230,13 +270,13 @@ def question7():
 
     # float
     answer["a, info gain, ID"] = 1.0
-    answer["b, info gain, Handedness"] = 0.53100
+    answer["b, info gain, Handedness"] = 0.5310044
 
     # string: "ID" or "Handedness"
     answer["c, which attrib"] = "ID"
 
     # answer is a float
-    answer["d, gain ratio, ID"] = 0.23137
+    answer["d, gain ratio, ID"] = 0.23137821315975915
     answer["e, gain ratio, Handedness"] = 0.53100
 
     # string: one of 'ID' or 'Handedness' based on gain ratio
