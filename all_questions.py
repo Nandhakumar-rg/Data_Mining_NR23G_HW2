@@ -26,7 +26,7 @@ def question1():
     level1["smoking"] = 1.
     level1["smoking_info_gain"] = 0.278
 
-    level1["cough"] = -1
+    level1["cough"] = -1.
     level1["cough_info_gain"] = -1
 
     level1["radon"] = -1
@@ -43,7 +43,7 @@ def question1():
     level2_left["radon"] = -1
     level2_left["radon_info_gain"] = -1
 
-    level2_left["cough"] = 1
+    level2_left["cough"] = 1.
     level2_left["cough_info_gain"] = 0.722
 
     level2_left["weight_loss"] = -1
@@ -52,7 +52,7 @@ def question1():
     level2_right["radon"] = 1
     level2_right["radon_info_gain"] = 0.722
 
-    level2_right["cough"] = -1
+    level2_right["cough"] = -1.
     level2_right["cough_info_gain"] = -1
 
     level2_right["weight_loss"] = -1
@@ -80,7 +80,7 @@ def question2():
 
     # Answers are floats
     answer["(a) entropy_entire_data"] = 0.991
-    # Info-gain
+    # Infogain
     answer["(b) x <= 0.2"] = 0.918
     answer["(b) x <= 0.7"] = 0.971
     answer["(b) y <= 0.6"] = 0.918
