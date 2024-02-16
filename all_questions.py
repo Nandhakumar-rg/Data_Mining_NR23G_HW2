@@ -47,7 +47,7 @@ def question1():
     level2_left["cough_info_gain"] = 0.3219
 
     level2_left["weight_loss"] = -1.
-    level2_left["weight_loss_info_gain"] = 0.171
+    level2_left["weight_loss_info_gain"] = 0.1710
 
     level2_right["radon"] = 1.
     level2_right["radon_info_gain"] = 0.7219
@@ -64,9 +64,10 @@ def question1():
 
     # Fill up construct_tree`
     # tree, training_error = construct_tree()
-    tree = u.BinaryTree("smoking == Yes")  # MUST STILL CREATE THE TREE ***
-    A = tree.insert_left("cough = Yes")
-    B = tree.insert_right("randon == Yes")
+    
+    tree = u.BinaryTree("smoking")  # MUST STILL CREATE THE TREE ***
+    A = tree.insert_left("cough")
+    B = tree.insert_right("radon")
     A.insert_left("y")
     A.insert_left("y")
     A.insert_left("y")
@@ -95,9 +96,9 @@ def question2():
     # Answers are floats
     answer["(a) entropy_entire_data"] = 1.4253642047367425
     # Infogain
-    answer["(b) x <= 0.2"] = 0.17739286055515824
-    answer["(b) x <= 0.7"] = 0.3557029418697566
-    answer["(b) y <= 0.6"] = 0.34781842724338197
+    answer["(b) x < 0.2"] = 0.17739286055515824
+    answer["(b) x < 0.7"] = 0.3557029418697566
+    answer["(b) y < 0.6"] = 0.34781842724338197
 
     # choose one of 'x=0.2', 'x=0.7', or 'x=0.6'
     answer["(c) attribute"] = "y=0.6"  
